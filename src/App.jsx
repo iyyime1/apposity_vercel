@@ -9,7 +9,7 @@ import Banner from './Components/Banner/Banner'
 import Target from './Components/Target/Target'
 import BlueSection from './Components/BlueSection/Bluesection'
 import Logosection from './Components/Logosection/Logosection'
-import Footer from './Components/footer/footer'
+import Footer from './Components/footer/Footer'
 
 
 function App() {
