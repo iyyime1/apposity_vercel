@@ -1,0 +1,108 @@
+import React from "react";
+import "./Bluesection.css";
+
+const features = [
+  {
+    id: 1,
+    image: "https://appsocity.vercel.app/assets/1-CNS_r1MQ.png",
+    title: "Maintenance Bills",
+    description:
+      "Generate Maintenance Bills within seconds for all billing frequency and send to members via SMS/email.",
+    color: "#ff8400",
+  },
+  {
+    id: 2,
+    image: "https://appsocity.vercel.app/assets/2-CqyvYuOJ.png",
+    title: "End-to-End Accounting",
+    description:
+      "From billing to expenses, year-end transactions, audit, and statutory, you get control of Society Accounts.",
+    color: "#c4161c",
+  },
+  {
+    id: 3,
+    title: "Create & Serve Notes",
+    image: "data:image/png;base64,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",
+    description:
+      "Use AppSociety to create polite or urgent specific notices with attachments and ability to reach applicable members.",
+    color: "#0a87a5",
+  },
+  {
+    id: 4,
+    title: "Visitor Management",
+    image: "data:image/png;base64,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",
+    description:
+      "Secure your premises by verifying every visitor directly with residents seamlessly using Visitor Management.",
+    color: "#c4161c",
+  },
+  {
+    id: 5,
+    title: "Document Library",
+    image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHYAAAB2CAYAAAAdp2cRAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAA4YSURBVHgB7V0JcFXVGf7u8pawhISYhEjInkC0Oq5lOtYZiJTq1DqdOo5LpwtKZBWk0OLaRmvHVoMsAaXEtVpl2s44XawbLUzbcZQp00VQzMZOEkgICQl5272n/3n3PrKhJC/vvpy8d77h8l5OXu6793xn+b///8+5gISEhISEhISEhISEhISEhISEhISEhISEhITEhaBAwlGMRQXrdISQs+Aq+HsyoaghiApVcSHgrUPnS02IXPc4QbyJVekwUb71Q/jaZ0MxIDQYAzQvvbpr0LhqBZVodAh+0Rbi32NnLPkW9Ow3Yfqo1hTxh2RGvVTTdCgXvYCm+xdinPRcFfFGyFcOxhv9OCCVQyEiDSME1nYPijY+D4tUDYIj/sQyJYDxhnPknoiQy1um0OTqEALKaeipDdST3RhzKH6Euq6kAWVg3YTJNWlY5uTWAE33CT0si0Gs6v0tGh9YBFFQuvEIAi25Q8rPkdsiPLnxH4rPB2ZOgVAwP3+YtYZlAyaRW7y5FoLOuWIQKz7MAa+KosGknsuOL0RhTWTOFWRasyCJHRaYQtPFP6Bolg7n4D03xEJQWu9B/oaItSwMuZLY4UCboqBj5y1gE16Fqg8il6xllaRQ8cbIsCwEuZLY4cIzYQYOPfQ9qFO2Q3ENJDcshU5GhmUhyJXEDhcKs7Rr45o7oaVuh6oO7bkKGVSFW4QgVxI7MlhGEidXyTsPuWRQ4bgQHipRiGUQHUEjYhlbvbFpEZGb+gZFpwYNy0SuGXZijKm1HM8v5b5hBtU4NTT2wO+/xIP0Au+Fz+JiONV7FtgVcQr0VaxTIOMXWoYbmXMmIaRrdpmCprV3oehJE0bXd/quj+qUSyE+LJdsABrGJnAQL0e8i44gMn8wDSlF70HtvaxfH+WkqHBnwQoOXAg8KMRjuKwRvS1P4Gj1a7CGPBOx6vml648jcCKnr8AI0rzqIskz9LPBk366fB2Dh91wVIjKWe5zOLhkKSINO06IB7FWay168hm6/1UItjHra0cV3WFhHlWXAldOM06+WY6OHV19vxslhhAbJTi57kk6evZfi+ZX/4U4wuk5lrfiEEpe2Q6zexUC7QZPS4hByE4Jn8c0GHyHs5Fx02nkPX4JLFJjcE/hHjj6BhI2qHz0xjUfcYbTxJrIe/BmmI2307xjhl1xsYUSNl4CJw24PHtRVDUP1pA8uu9RfDvD3qaYkKvwTIy4hyqdNJ6sivHMeA2Bw5xUuxEpZFgwHXo6lbmCdgUOD0xhUAwVwR4XzF7jXEPhr8GOEFxT3kd+9TIcWvMsojdYVNStvR1lmzNpbr2e5v3hG2aKxuBvtkOPY5tI4CSxDJm3XQHz9BSu7s+V8Tin6X0Z2LkY9bOJ2F0jGDUy6TyXMuQfvwKuWbsRaqFK18ITdvi8oU4ycjxbUFx9GWnNJYiOXDP8d3XLK4AqdWTXR5Z6QdWLYP4FGGM4K3c80+fD6ObvIq2XnOmp+3BwLb9xqrC3eSWOUKr8TsEh/BtX35uCzitbETyQRuQy6zsUF0IBskY7F6Pk2TI0LL0B0ZFrf74qiuvDBAgAZ+dY5s8ZaHjTe/PEn+wfotWeLHzs2WaiYclUePPr7eG8z0lghkwED1egtGYfxkmOUqzhsPE0aJ7h9e8yYjVKWL7bz5bNhH4xGTthD1BECNN7xUTgSDnKNrUBcxSrLHkS1R0mlg21KllMjQrbMb+iAp7MWlIpWlg7WlDDHdV3NB1lt/ow+c6pdnlSkJsIQQDLH1t3/71g2Suhp+j9yFXCwXHfUWDa7JPIWxtDrSs2EuUGLcf8weWbaPS/Ce6LiFzWZzApqoZAs0Hle5H32NcQC60rOBKp5VpGUuOj78B34HJ4cohco5/zmZNLni+X/h5KnuG+W+HylGKJRBuSOFkqjm7eizP/yYInTwEz+4ID3JEROhOEcWYLCqqfg2B5SrFEIs41luxpeakd9f/zIiWnk8jlJbYhR1rX8BGhHYvJYv4rEpTcRDUiOInEJmndz+6fipSSoVqXmQbNuxUo3pqQWjfRrUNb61bOpHjvLnrbX+tyaWQi1ERa9znSurfxsoTRusmQ82SRW//DuXBNe56ifVYo0YKtdQ+mo3SuH5OXpdvl457cZElmsyzghuWV0PNXwuUdpHXJa+U/BOSUtmHaqoTQusmUpWgZSfWLNiHkvgmeCf3JtbSuj7Tu5Ol7Mf2XPHgwrrVusqWfWkbSwQffQa/rcnjTLSMqAk6uvz0Er7ED+Y+Pa62bjHnFttZ9gLRuaya82YodTLe1Lk9n6QpCZVtQumErxqkcStaEcUv2NK87hbrfeDGx4PxaN9i+CKXVOzAOyU3mlQC21t1j4tOlFNfNIq2LQVo3RFq3/QaU/2ovxpnWFYnYWF7LSM5lyaG61TORkrvT/ts+rcuJ7mm6hLRu+3jSuqIMLxqyv+uFZ/obMHumIbokNCXcy5SMWhyu2oaRpcRY5O5fVoGSdbXkT14I5o8MvyoZVYy0bhrKSet2pWTj2K9PIc4J4COFCMRaw1/6V0+jt0mDnjqK3kCBfcW8BoXr8nBg9SMYGWytu7oSpes+huHeSASHwo3F0roKeg4amHAlad2ML6FlPXdFOr+8JEqIMBQzzFhwB3zH9PDlcCMm6oP8wWaAQXevQnSwte7qTTB9N8I1dVBcVyM51EJa9+LY5TA7BDHm2JD/GBSejhuTkY1BM88getha9/F3wbouh2syJ3eQ1m0zyHB+H0U1wmpdEYhV0Pz630lP7oKWqoQXPkV7KB7Am6ui+8h8jM7AsbRu08/2oqc7C+4MDIzrqlZcl7VuQfE2IeO6IlwMrywdn1bOxbS7vgzDXwCFBTFi8A1AUjR0ffQuTr3NF2iN1nI1w+doebI9nMPcdU0r/A1p4Wz/SA4zXwvLDlBct7oMdWtugEAQpZXxFk+V+Ppuet2N0SNWFmskh5nOt20qZtZ8Bt/RMurM1tJPvlSFUe/2t1egdOM+1K+8FAgIsTuqSDo2ltIh1jLEjuveNxN63s4hcV3euwPHy1H89Cfk1PBDAMg9KIYPO4eZtK4nqxaqa1AOM/0Ltc+ij/DlK2MugRLV8+SUZ8jOYV5xL4yJFNedNDCu27fyYczrVZQ51vIS5S5Zi8DpQrI6o1hPyiyDRp1WS879PXBuN3DLAj68dhPyf1EPd/pfEDgVGrJb6hhDFM9TCLO2HiEnRS70TIwKuncRZvz8Thx5eDucg6V1Dz3wNorXXEau0I/hpyA9d2CcD2bgLOIMMTxP2ZW3kEcnFyzIwJXOaI5Al4mUtFo4D0vrNlbvg3I0E558DIjrnrs7agMTL6mwf4pbRxJjjtUjEiEGUyMPBdjB1TjA+p46iuvW/zcF3lld9s43feTyDA3WfStKauKawyyG5+nYK2/Bk3eIpki+iIpK9OgOfjuuDAWBlu8jfujLYa67Ox3evDrbiLIbl6KFtW7oWAXKXo7kMDtOriieJwqZ3V2A3MUrYATJ86RG53lSdB2+lhfR+sJexP9RKnZcd/kslD31N/g75xK3kWcHELmKCf++cpS+8Cnq7ymHw5EhUSw5Ow9p6ybEBgrG5vk4Nrk/rghvc2t2LITZL64L3USwaRYKfrKSggwb4SBE0rGxbL1jGQC3N9JcWQnVvRL6RH2AI4MHE9w5T1kblziXiSE9T87A6qWND21CkN0GzdN/QzAVoTY30vdfBwcboEjEJtoWApbWPfzo76Hpuwbsx2H0ApNz5sFBiOV5uuiOOTDbCsH0kRtPKvc86SoCyls48+c2iJGTZM3zRscHgGfOuVK+l1nQnwYHIY7naWbNBxS8/sr59iMZPuhvdaqvSQXXonnzHogCLeSB4e23jxn4e0e1thhyJ2/xdfB3EKlnR/8gQ6PbRGrZu2hGBkQBi/+MJ8Yc6ztdxLdlQkz2H6RxzjBSkOQQY4793FSY4fLMrIyGPgiRxTCWEHg9itJJU+8/ibQv3puQ8SRx1/VjbyeJBXGJVSd9iAMP3XzBz2XPn4jJN3YjeBISfRDXQcFCw9tF1OhNHUePTo8bpOcpQTH+ie3V5OR6HghMrNo7rI95es9Ku2koRDWeGMyeCpRuOAVmfEHj48kSfnLPtZn2I0AlbIhKrLXWNdCaPrxPy+F4MAR5lLfLPcrhdLAnI+m2ih8MMYjV9N3Qwl7A0XuMeCBb048gySFGdKf55f0oevoxuLJ+CubDqOBK60HLR7Mh8GrzeECUZDYXmn5UhfR56+F1p8HPoui5hgIv9frGP/DeqiHJfYxjQOx5OxEPAijo2EH+YXRi9BAsCBD/gcPh5+6og87PHyKpfd66nMTtYUwJDLk9pjha984Sq7ubB2REhNOos66Ky3eLAesejexrB2RP8DrRPc1wEM5Wrv/Mbqie/iVksQa+jrxHbkZyGDYm8h7+JvTgPPRv4ZobCJz5EA7CycxAOvfVOsoWnIX/GG9AdiOioLrmdQETDxDzHfbajMQD32lG8WQA3Xkw/MHwEk/rFwY8eSrqlka0tiNTkLNPo8SeIALfeIJuqspusfamHH567y+knwuR0Ojh/7E+UvnTOPljYo5XwWGbwulcXmv9TGltIwINhXanTbT84WGCWY8fd5XWo6FyJhxeW+S0AWPvx19ZDHfOx+HVdMnpNKBh2c2fJ/9JPEjliFfvsW4kf81dcOetp8hNFkw/xvihyM7DpE6q8XzilNPwHVmGo9WvI06rAONZs303NPXbuXBPuhgBfxp0lqA9mHSq4u4E6zyIE39shVXXCT1iJeMcm6R2hYSEhISEhISEhISEhISEhISEhISEhISEhMTw8H/lLi2gaauNcgAAAABJRU5ErkJggg==",
+    description:
+      "Securely store all important documents, correspondence, forms, certificates, etc. in a repository and access it at ease.",
+    color: "#6b5fb5",
+  },
+  {
+    id: 6,
+    title: "Member Helpdesk/Support",
+    image: "https://appsocity.vercel.app/assets/6-BRB0OvSD.png",
+    description:
+      "Members can raise service requests, complaints or share feedback & track the status through AppSociety's mobile app.",
+    color: "#e8b02e",
+  },
+  {
+    id: 7,
+    title: "Handy Contacts",
+    image: "https://appsocity.vercel.app/assets/7-Bc7RSPxO.png",
+    description:
+      "No need to separately store society contact directory anymore. Make calls directly from the app.",
+    color: "#d92c8a",
+  },
+  {
+    id: 8,
+    title: "Conduct Polls",
+    image: "https://appsocity.vercel.app/assets/8-BUaORejG.png",
+    description:
+      "Let every voice count. Conduct fair & anonymous polls within your community in seconds. Share results instantly.",
+    color: "#43a985",
+  },
+];
+
+const BlueSection = () => {
+  return (
+    <div className="blueContainer">
+      <div className="headings">
+        <h1>Experience community management at its best,</h1>
+        <h2>Go live in less than 48 hours!</h2>
+      </div>
+
+      <div className="features-grid">
+        {features.map((feature) => (
+          <div   className={`feature-card card-${feature.id}`}
+  key={feature.id}>
+            <div className="card-top">
+              <img src={feature.image} alt={feature.title} />
+              
+            </div>
+
+            <div
+              className="card-bottom"
+            
+            >
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="text">
+        <h1>Explore All Features</h1>
+        <h3>Check Check out all features that AppSociety has to offer today,
+while we keep adding many more.</h3>
+<button> Click Here</button>
+      </div>
+    </div>
+  );
+};
+
+export default BlueSection;
